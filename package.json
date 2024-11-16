@@ -1,6 +1,6 @@
 {
   "name": "phone-to-timezone",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Get possible timezones by phone number",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -33,7 +33,7 @@
     "url": "git+https://github.com/ofekray/phone-to-timezone.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ofekray/phone-to-timezone/issues"
   },
@@ -45,5 +45,22 @@
     "rimraf": "^6.0.1",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3"
-  }
+  },
+  "keywords": [
+    "phone",
+    "timezone",
+    "country",
+    "code",
+    "prefix",
+    "number",
+    "phone number",
+    "time",
+    "zone",
+    "time zone",
+    "phone code",
+    "phone prefix",
+    "phone country",
+    "phone timezone",
+    "phone time zone"
+  ]
 }
