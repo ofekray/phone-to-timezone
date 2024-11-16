@@ -1,8 +1,8 @@
 class PhoneToTimezoneTrieNode {
-    public childern: Map<string, PhoneToTimezoneTrieNode>;
+    public children: Map<string, PhoneToTimezoneTrieNode>;
 
     constructor(public timezones?: string[]) {
-        this.childern = new Map();
+        this.children = new Map();
     }
 }
 
@@ -17,10 +17,10 @@ export class PhoneToTimezoneTrie {
         let node = this.root;
         for (let i = 0; i < phone.length; i++) {
             const digit = phone.charAt(i);
-            if (!node.childern.has(digit)) {
-                node.childern.set(digit, new PhoneToTimezoneTrieNode());
+            if (!node.children.has(digit)) {
+                node.children.set(digit, new PhoneToTimezoneTrieNode());
             }
-            node = node.childern.get(digit)!;
+            node = node.children.get(digit)!;
         }
         node.timezones = timezones;
     }
@@ -31,10 +31,10 @@ export class PhoneToTimezoneTrie {
 
         for (let i = 0; i < phone.length; i++) {
             const digit = phone.charAt(i);
-            if (!node.childern.has(digit)) {
+            if (!node.children.has(digit)) {
                 break;
             }
-            node = node.childern.get(digit)!;
+            node = node.children.get(digit)!;
             if (node.timezones) {
                 latestTimezones = node.timezones;
             }
