@@ -25,15 +25,21 @@ export class PhoneToTimezoneTrie {
         node.timezones = timezones;
     }
 
-    find(phone: string): string[] | undefined {
+    findTimezones(phone: string): string[] | undefined {
         let node = this.root;
+        let latestTimezones: string[] | undefined;
+
         for (let i = 0; i < phone.length; i++) {
             const digit = phone.charAt(i);
             if (!node.childern.has(digit)) {
-                return undefined;
+                break;
             }
             node = node.childern.get(digit)!;
+            if (node.timezones) {
+                latestTimezones = node.timezones;
+            }
         }
-        return node.timezones;
+
+        return latestTimezones;
     }
 }
